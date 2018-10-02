@@ -84,4 +84,5 @@ public class SplashActivity extends BaseActivity {
     public void showRepositoriesListForUser(User user) {
         RepositoriesListActivity.startRepositoriesListActivity(user.login, this);
     }
+
 }
