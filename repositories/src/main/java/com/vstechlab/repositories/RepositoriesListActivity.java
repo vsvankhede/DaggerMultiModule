@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.common.collect.ImmutableList;
 import com.vstechlab.base.BaseActivity;
 import com.vstechlab.base.data.model.Repository;
+import com.vstechlab.repository.RepositoryDetailsActivity;
 
 import javax.inject.Inject;
 
@@ -82,6 +83,6 @@ public class RepositoriesListActivity extends BaseActivity {
     }
 
     public void openRepositoryDetailsScreen(Repository repository, String username) {
-        Toast.makeText(this, "Opening Repository Detail screen", Toast.LENGTH_SHORT).show();
+        RepositoryDetailsActivity.startWithRepository(repository, username, this);
     }
 }
