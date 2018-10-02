@@ -13,6 +13,7 @@ import com.jakewharton.rxbinding.widget.RxTextView;
 import com.vstechlab.base.BaseActivity;
 import com.vstechlab.base.data.model.User;
 import com.vstechlab.base.utils.AnalyticsManager;
+import com.vstechlab.repositories.RepositoriesListActivity;
 
 import javax.inject.Inject;
 
@@ -81,7 +82,6 @@ public class SplashActivity extends BaseActivity {
     }
 
     public void showRepositoriesListForUser(User user) {
-        Toast.makeText(this, "Showing repositories", Toast.LENGTH_SHORT).show();
-//        RepositoriesListActivity.startRepositoriesListActivity(user.login, this);
+        RepositoriesListActivity.startRepositoriesListActivity(user.login, this);
     }
 }

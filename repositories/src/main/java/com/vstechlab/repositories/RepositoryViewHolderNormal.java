@@ -16,6 +16,8 @@ import butterknife.ButterKnife;
 @AutoFactory(implementing = RepositoriesListViewHolderFactory.class)
 public class RepositoryViewHolderNormal extends RepositoryViewHolder {
 
+    @BindView(R2.id.tvName)
+    TextView tvName;
 
     public RepositoryViewHolderNormal(ViewGroup parent) {
         super(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_normal, parent, false));
@@ -24,6 +26,6 @@ public class RepositoryViewHolderNormal extends RepositoryViewHolder {
 
     @Override
     public void bind(Repository repository) {
-
+        tvName.setText(repository.name);
     }
 }

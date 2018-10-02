@@ -16,6 +16,13 @@ import butterknife.ButterKnife;
 @AutoFactory(implementing = RepositoriesListViewHolderFactory.class)
 public class RepositoryViewHolderFeatured extends RepositoryViewHolder {
 
+    @BindView(R2.id.tvName)
+    TextView tvName;
+    @BindView(R2.id.tvStars)
+    TextView tvStars;
+    @BindView(R2.id.tvForks)
+    TextView tvForks;
+
     public RepositoryViewHolderFeatured(ViewGroup parent) {
         super(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_featured, parent, false));
         ButterKnife.bind(this, itemView);
@@ -23,5 +30,8 @@ public class RepositoryViewHolderFeatured extends RepositoryViewHolder {
 
     @Override
     public void bind(Repository repository) {
+        tvName.setText(repository.name);
+        tvStars.setText("Stars: " + repository.stargazers_count);
+        tvForks.setText("Forks: " + repository.forks_count);
     }
 }
